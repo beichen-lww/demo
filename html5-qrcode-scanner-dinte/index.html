@@ -2,12 +2,31 @@
 <html>
 
 <head>
-    <title>QR Code Scanner</title>
+    <title>摄像头-2</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .reader-qrcode {
+            width: 500px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <script src="./html5-qrcode.min.js"></script>
 
 <body>
-    <div id="qr-reader" style="width:500px"></div>
+    <div class="reader-qrcode" id="qr-reader" style="width:500px"></div>
     <div id="qr-reader-results"></div>
 
 
@@ -21,6 +40,7 @@
                 lastResult = decodedText;
                 // Handle on success condition with the decoded message.
                 console.log(`Scan result ${decodedText}`, decodedResult);
+                alert(`Scan result ${decodedText}`, decodedResult)
             }
         }
 

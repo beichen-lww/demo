@@ -2,12 +2,32 @@
 <html>
 
 <head>
-    <title>扫描</title>
+    <title>摄像头-1</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .reader-qrcode {
+            width: 500px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <script src="./html5-qrcode.min.js"></script>
 
 <body>
-    <div style="width: 500px" id="reader"></div>
+    <div class="reader-qrcode" id="reader"></div>
     <script>
         var html5QrcodeScanner = new Html5QrcodeScanner(
             "reader", { fps: 10, qrbox: 250 });
